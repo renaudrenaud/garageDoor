@@ -18,9 +18,9 @@ ipAddress = s.getsockname()[0]
 s.close()
 
 @get('/opendoor') #
-def login():
+def opendoor():
     return '''
-        <form action="/login" method="post">
+        <form action="/opendoor" method="post">
             <font size="10"><center>This is the open page!</center><hr>
             <div title="hit the button to open">
                 <button style="text-align:center;font-size:80px" type="submit"> Open door </button>
@@ -29,10 +29,10 @@ def login():
     '''
 @post('/opendoor') # 
 
-def do_login():
+def do_opendoor():
     gpio.output(relay, gpio.HIGH)
     sleep(1)
     gpio.output(relay, gpio.LOW)
-    redirect('/login')
+    redirect('/opendoor')
 
 run(host=ipAddress, port=8080, debug=True) # we use thez IP address grabbed before and port 8080
