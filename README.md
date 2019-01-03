@@ -51,7 +51,7 @@ sudo python garageDoor.py
 
 if you want to close the session but continue with the garage door website, use:
 ```
-nohup sudo python garageDoor.py
+nohup sudo python garageDoor.py &
 ```
 
 Enjoy!
